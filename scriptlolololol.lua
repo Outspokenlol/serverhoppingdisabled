@@ -3,8 +3,11 @@
 -- Removed DB.JSON
 -- By GNAA, a civil rights group striving for homo-African interdependence.
 
-local BlacklistedPlayers, WhitelistedPlayers, ModsTable, kroneTable, BLSV, WLSV, MDSV, KRONE =
-    {},
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local rservice = game:GetService("RunService")
+
+local BlacklistedPlayers, WhitelistedPlayers, kroneTable, BLSV, WLSV, MDSV, KRONE =
     {},
     {},
     {},
@@ -17,12 +20,6 @@ local Settings = {ServerHops = 1, Distance = 18, Globals = {"Executions", "List"
 local Blacklist, kroneUserids = {}, {4710732523, 354902977}
 
 -- ... (The rest of your existing code)
-
--- Your functions for checking blacklisted, whitelisted, and krone players
-
--- ... (The rest of your existing code)
-
-game:GetService("Lighting").ClockTime = 0
 
 local function delayAndTeleport()
     local function teleport()
@@ -48,6 +45,7 @@ coroutine.resume(
                 pcall(
                     function()
                         -- Your existing code for handling players
+                        -- Ensure that the shhhlol function is being called appropriately
                     end
                 )
             end
