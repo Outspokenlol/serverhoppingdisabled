@@ -3,11 +3,41 @@
 -- Removed DB.JSON
 -- By GNAA, a civil rights group striving for homo-African interdependence.
 
+local BlacklistedPlayers, WhitelistedPlayers, ModsTable, kroneTable, BLSV, WLSV, MDSV, KRONE =
+    {},
+    {},
+    {},
+    {},
+    false,
+    false,
+    false,
+    false
+
+local Settings = {ServerHops = 1, Distance = 18, Globals = {"Executions", "List"}}
+local Blacklist, kroneUserids = {}, {4710732523, 354902977}
+
 -- ... (The rest of your existing code)
 
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local rservice = game:GetService("RunService")
+-- Your functions for checking blacklisted, whitelisted, and krone players
+
+-- ... (The rest of your existing code)
+
+game:GetService("Lighting").ClockTime = 0
+
+local function delayAndTeleport()
+    local function teleport()
+        -- Your existing teleport code
+    end
+
+    -- Delay before teleporting
+    local delayTime = 1 -- Adjust the delay time (in seconds) as needed
+    wait(delayTime)
+
+    -- Call the teleport function
+    teleport()
+end
+
+coroutine.wrap(delayAndTeleport)()
 
 -- ... (The rest of your existing code)
 
@@ -17,19 +47,7 @@ coroutine.resume(
             while wait() do
                 pcall(
                     function()
-                        for _, z in pairs(Players:GetPlayers()) do
-                            if z ~= LocalPlayer and not table.find(WhitelistedPlayers, tostring(z.UserId)) then
-                                if
-                                    LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and
-                                        z and
-                                        z.Character and
-                                        z.Character:FindFirstChildOfClass("Humanoid").Sit == false
-                                 then
-                                    shhhlol(z)
-                                    wait()
-                                end
-                            end
-                        end
+                        -- Your existing code for handling players
                     end
                 )
             end
